@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>List Users</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+	
+	<div>
+		<h1>List of Users</h1>
+	</div>
+	
+	<div>
+		<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>User ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>User Name</th>
+					<th>Password</th>
+					<th>Department Name</th>
+					<th>Trening Name</th>
+					<th>Date Of Birth</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user: ${listUsers}">
+					<td th:text="${user.userID}">User ID</td>
+					<td th:text="${user.userFName}">First Name</td>
+					<td th:text="${user.userLName}">Last Name</td>
+					<td th:text="${user.userName}">User Name</td>
+					<td th:text="${user.password}">Password</td>
+					<td th:text="${user.dptName}">Department Name</td>
+					<td th:text="${user.traningName}">Trening Name</td>
+					<td th:text="${user.userDOB}">Date Of Birth</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
